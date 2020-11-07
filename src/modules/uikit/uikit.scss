@@ -1,0 +1,77 @@
+@import 'core.scss';
+
+.uikit {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 15px;
+  padding-right: 20px;
+
+  //Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+  }
+}
+
+.caption {
+  text-align: center;
+}
+
+.section {
+  margin: 100px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.icon {
+  width: fit-content;
+  padding: 5px;
+  background: $primary;
+}
+
+.text-fields {
+  div:not(:first-child) {
+    margin-top: 24px;
+  }
+}
+
+.buttons {
+  @include flex($align: center);
+  & > button {
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+}
+
+.preloader-controls {
+  @include flex($align: stretch, $direction: column);
+  button:last-child {
+    margin-top: 10px;
+  }
+}
+
+.form-container {
+  @include flex($align: stretch);
+}
+
+.form {
+  width: 75%;
+}
+
+.values {
+  @include font($black, 20px);
+  width: 20%;
+  margin-left: 25px;
+}

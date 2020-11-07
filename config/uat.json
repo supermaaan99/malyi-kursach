@@ -1,0 +1,4 @@
+{
+  "apiUrl": "https://uat.app.hellochatapp.com/v1",
+  "socketUrl": "https://dev.socket.app.hellochatapp.com"
+}

@@ -1,0 +1,57 @@
+@import 'core.scss';
+
+.button {
+  @include flex(center, center);
+  width: fit-content;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+
+  &--primary {
+    font-weight: 600;
+    color: $white;
+    background: $primary;
+    border: 1px solid $primary;
+  }
+
+  &--secondary {
+    font-weight: 600;
+    color: $primary;
+    background: transparent;
+    border: 1px solid $primary;
+    transition: $transition;
+
+    &:hover {
+      color: $white;
+      background: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &--sm {
+    padding: 8px 14px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &--md {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+  &:hover {
+    &:not([disabled]) {
+      opacity: 0.9;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@import 'core.scss';
+
+.routes {
+  @include flex($align: stretch, $direction: column);
+  min-height: 100vh;
+}

@@ -1,0 +1,24 @@
+@import 'core.scss';
+
+.home {
+  @include flex(center, center);
+  flex: 1;
+}
+
+.nav {
+  @include flex(center, center, column);
+}
+
+.link {
+  @include font($black, 24px);
+  transition: $transition;
+  &:hover {
+    color: $primary;
+  }
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+  &--active {
+    color: $primary;
+  }
+}

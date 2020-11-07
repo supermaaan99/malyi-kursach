@@ -1,0 +1,14 @@
+@import 'core.scss';
+
+.breadcrumbs {
+  @include flex(flex-start, center);
+  @include font($black, 16px);
+}
+
+.divider {
+  margin: 0 4px;
+}
+
+.current {
+  color: $primary;
+}

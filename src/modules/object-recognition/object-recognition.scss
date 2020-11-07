@@ -1,0 +1,129 @@
+@import 'core.scss';
+
+.object-recognition {
+  display: none;
+  flex: 1;
+  max-height: 100%;
+
+  &--ready {
+    @include flex($align: stretch, $direction: column);
+  }
+}
+
+.view {
+  @include flex($align: stretch, $direction: column);
+  position: relative;
+  flex: 1;
+}
+
+.image {
+  flex: 1;
+}
+
+.zoom {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: 28%;
+  left: 36px;
+  border-radius: 32px;
+  background: #17161f;
+  &__up {
+    padding: 41px 35px;
+  }
+  &__down {
+    padding: 63px 35px;
+  }
+}
+
+.predictions {
+  @include flex(flex-start, center);
+  position: absolute;
+  z-index: 10;
+  bottom: 42px;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  padding: 0 36px;
+}
+
+.prediction {
+  padding: 29px 44px;
+  font-size: 40px;
+  line-height: 24px;
+  color: $white;
+  border-radius: 13px;
+  background: rgba(23, 22, 31, 0.8);
+  transition: $transition;
+  cursor: pointer;
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+
+  &:hover {
+    background: #9403fc;
+  }
+}
+
+.controls {
+  @include flex(center, center);
+  height: 160px;
+  padding: 10px 0;
+  background: $black;
+  backdrop-filter: blur(250px);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    max-width: 80%;
+  }
+}
+
+.control {
+  @include flex(center, stretch, column);
+  @include size(100%);
+  padding: 5px 10px;
+  border-radius: 17px;
+  cursor: pointer;
+
+  &:hover {
+    background: #9403fc;
+  }
+
+  &__icon {
+    @include flex(center, center);
+  }
+  &__caption {
+    @include flex(center, center);
+    flex: 1;
+    font-size: 20px;
+    line-height: 24px;
+    color: $white;
+    text-align: center;
+  }
+}
+
+.recognition {
+  @include size(100%);
+  @include flex(center, center);
+  position: relative;
+  flex: 1;
+  background: #333332;
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.canvas {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+}

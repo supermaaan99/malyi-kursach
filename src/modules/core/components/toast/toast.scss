@@ -1,0 +1,51 @@
+@import 'core.scss';
+
+.toast {
+  @include flex($align: stretch);
+  position: absolute;
+  z-index: 999;
+  bottom: 30px;
+  right: 30px;
+  min-height: 96px;
+  padding: 20px;
+  background: #3b4153;
+  box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08),
+    0px 4px 4px rgba(51, 51, 51, 0.04);
+  border-radius: 8px;
+}
+
+.container {
+  flex: 1;
+  margin-right: 30px;
+}
+
+.title {
+  @include font($white, 18px, 600, 28px);
+}
+
+.description {
+  @include font($white, 16px, 400, 24px);
+  margin-top: 10px;
+}
+
+.controls {
+  @include flex($align: center);
+  margin-top: 20px;
+}
+
+.status {
+  @include flex(center, center);
+  @include size(56px);
+  @include min-size(56px);
+  border-radius: 50%;
+
+  &--success {
+    background: rgba(#27ae60, 0.12);
+  }
+  &--fail {
+    background: #f9e3e3;
+  }
+  &--info {
+    background: #e3daf9;
+  }
+}

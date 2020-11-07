@@ -1,0 +1,47 @@
+@import 'core.scss';
+
+.text {
+  @include error();
+  position: relative;
+
+  &--focused {
+    .input {
+      border-color: $primary;
+    }
+    .label {
+      color: $primary;
+    }
+  }
+}
+
+.input {
+  @include font($black, 14px, 500, 17px);
+  width: 100%;
+  padding: 18px;
+  background: transparent;
+  border: 1px solid #969ba3;
+  border-radius: 8px;
+  outline: none;
+  transition: $transition;
+
+  &::placeholder {
+    @include font(#969ba3, 14px, 500, 17px);
+  }
+
+  &--ios {
+    font-size: 16px;
+    transform: scale(1);
+    transform-origin: left top;
+    &::placeholder {
+      padding-top: 2px;
+    }
+  }
+
+  &--invalid {
+    border-color: $red;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+}

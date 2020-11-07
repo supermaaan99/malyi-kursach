@@ -1,0 +1,42 @@
+@import 'core.scss';
+
+.checkbox {
+  @include flex($align: center);
+  @include error();
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  &--disabled {
+    opacity: 0.5;
+    & > .label,
+    & > .flag {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.flag {
+  @include flex(center, center);
+  @include size(16px);
+  @include min-size(16px);
+  border: 1px solid #969ba3;
+  border-radius: 4px;
+  transition: $transition;
+  &--checked {
+    border-color: $primary;
+    background: $primary;
+  }
+}
+
+.check-icon {
+  & > div {
+    @include flex();
+  }
+}
+
+.label {
+  @include font(#383e50, 12px, 500, 120%);
+  margin-bottom: 0;
+  margin-left: 4px;
+  cursor: pointer;
+}

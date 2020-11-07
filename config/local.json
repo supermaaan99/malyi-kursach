@@ -1,0 +1,6 @@
+{
+  "port": 8289,
+  "host": "localhost",
+  "apiUrl": "http://localhost:8288/v1",
+  "socketUrl": "https://dev.socket.app.hellochatapp.com"
+}

@@ -1,0 +1,42 @@
+@import 'core.scss';
+
+.switch {
+  @include flex(flex-start, center);
+}
+
+.track {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  margin-left: 8px;
+  border-radius: 15px;
+  background: #6e8d9d;
+  transition: $transition;
+  cursor: pointer;
+
+  &--active {
+    background: rgba($primary, 0.4);
+  }
+}
+
+.indicator {
+  @include size(15px);
+  @include min-size(15px);
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #e7ecef;
+  transition: $transition;
+
+  &--active {
+    left: 100%;
+    background: $primary;
+    transform: translate(-115%, -50%);
+  }
+}
+
+.label {
+  margin-bottom: 0;
+}

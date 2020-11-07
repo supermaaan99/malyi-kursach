@@ -1,0 +1,31 @@
+@import 'core.scss';
+
+.overlay {
+  @include flex(center, center);
+  flex: 1;
+}
+
+.preloader {
+  position: relative;
+  text-indent: -9999rem;
+  border-top: 10px solid $primary;
+  border-right: 10px solid $primary;
+  border-bottom: 10px solid $primary;
+  border-left: 10px solid rgba($primary, $alpha: 0.5);
+  transform: translateZ(0);
+  animation: spin 1.3s infinite linear;
+  &,
+  &:after {
+    border-radius: 50%;
+    @include size(130px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

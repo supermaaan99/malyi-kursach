@@ -1,0 +1,48 @@
+@mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin min-size($size) {
+  min-width: $size;
+  min-height: $size;
+}
+
+@mixin error {
+  .error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    color: $red;
+    transform: translateY(calc(100% + 0.5rem));
+  }
+}
+
+@mixin font($color, $size, $weight: 400, $height: $size) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin fill($color) {
+  svg {
+    fill: $color;
+  }
+  g {
+    fill: $color;
+  }
+  path {
+    fill: $color;
+  }
+}
